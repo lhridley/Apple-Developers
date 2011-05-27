@@ -18,6 +18,18 @@
 		4C095FDA1385F0BF00374892 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C095FD81385F0BF00374892 /* MainWindow.xib */; };
 		4C095FDD1385F0BF00374892 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C095FDC1385F0BF00374892 /* RootViewController.m */; };
 		4C095FE01385F0BF00374892 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C095FDE1385F0BF00374892 /* RootViewController.xib */; };
+		4CDE28D9138F255A008A0630 /* TabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CDE28D7138F255A008A0630 /* TabViewController.m */; };
+		4CDE28DA138F255A008A0630 /* TabViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CDE28D8138F255A008A0630 /* TabViewController.xib */; };
+		4CDE28DE138F29CF008A0630 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CDE28DC138F29CF008A0630 /* FirstViewController.m */; };
+		4CDE28DF138F29CF008A0630 /* FirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CDE28DD138F29CF008A0630 /* FirstViewController.xib */; };
+		4CDE28E3138F29E3008A0630 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CDE28E1138F29E3008A0630 /* SecondViewController.m */; };
+		4CDE28E4138F29E3008A0630 /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CDE28E2138F29E3008A0630 /* SecondViewController.xib */; };
+		4CDE28E8138F29F5008A0630 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CDE28E6138F29F5008A0630 /* ThirdViewController.m */; };
+		4CDE28E9138F29F5008A0630 /* ThirdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CDE28E7138F29F5008A0630 /* ThirdViewController.xib */; };
+		4CDE28ED138F2A13008A0630 /* FourthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CDE28EB138F2A13008A0630 /* FourthViewController.m */; };
+		4CDE28EE138F2A13008A0630 /* FourthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CDE28EC138F2A13008A0630 /* FourthViewController.xib */; };
+		4CDE28F2138F2A25008A0630 /* FifthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CDE28F0138F2A25008A0630 /* FifthViewController.m */; };
+		4CDE28F3138F2A25008A0630 /* FifthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CDE28F1138F2A25008A0630 /* FifthViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +49,24 @@
 		4C095FDB1385F0BF00374892 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		4C095FDC1385F0BF00374892 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		4C095FDF1385F0BF00374892 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RootViewController.xib; sourceTree = "<group>"; };
+		4CDE28D6138F255A008A0630 /* TabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabViewController.h; sourceTree = "<group>"; };
+		4CDE28D7138F255A008A0630 /* TabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabViewController.m; sourceTree = "<group>"; };
+		4CDE28D8138F255A008A0630 /* TabViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabViewController.xib; sourceTree = "<group>"; };
+		4CDE28DB138F29CF008A0630 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		4CDE28DC138F29CF008A0630 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		4CDE28DD138F29CF008A0630 /* FirstViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FirstViewController.xib; sourceTree = "<group>"; };
+		4CDE28E0138F29E3008A0630 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		4CDE28E1138F29E3008A0630 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		4CDE28E2138F29E3008A0630 /* SecondViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondViewController.xib; sourceTree = "<group>"; };
+		4CDE28E5138F29F5008A0630 /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
+		4CDE28E6138F29F5008A0630 /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
+		4CDE28E7138F29F5008A0630 /* ThirdViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThirdViewController.xib; sourceTree = "<group>"; };
+		4CDE28EA138F2A13008A0630 /* FourthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthViewController.h; sourceTree = "<group>"; };
+		4CDE28EB138F2A13008A0630 /* FourthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthViewController.m; sourceTree = "<group>"; };
+		4CDE28EC138F2A13008A0630 /* FourthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FourthViewController.xib; sourceTree = "<group>"; };
+		4CDE28EF138F2A25008A0630 /* FifthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FifthViewController.h; sourceTree = "<group>"; };
+		4CDE28F0138F2A25008A0630 /* FifthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FifthViewController.m; sourceTree = "<group>"; };
+		4CDE28F1138F2A25008A0630 /* FifthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FifthViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +87,20 @@
 		4C095FB21385F0BF00374892 = {
 			isa = PBXGroup;
 			children = (
+				4CDE28EF138F2A25008A0630 /* FifthViewController.h */,
+				4CDE28F0138F2A25008A0630 /* FifthViewController.m */,
+				4CDE28F1138F2A25008A0630 /* FifthViewController.xib */,
+				4CDE28EA138F2A13008A0630 /* FourthViewController.h */,
+				4CDE28EB138F2A13008A0630 /* FourthViewController.m */,
+				4CDE28EC138F2A13008A0630 /* FourthViewController.xib */,
+				4CDE28E5138F29F5008A0630 /* ThirdViewController.h */,
+				4CDE28E6138F29F5008A0630 /* ThirdViewController.m */,
+				4CDE28E7138F29F5008A0630 /* ThirdViewController.xib */,
+				4CDE28E0138F29E3008A0630 /* SecondViewController.h */,
+				4CDE28E1138F29E3008A0630 /* SecondViewController.m */,
+				4CDE28E2138F29E3008A0630 /* SecondViewController.xib */,
 				4C095FC91385F0BF00374892 /* ToDo */,
+				4C095FD51385F0BF00374892 /* ToDo.xcdatamodeld */,
 				4C095FC01385F0BF00374892 /* Frameworks */,
 				4C095FBE1385F0BF00374892 /* Products */,
 			);
@@ -91,8 +134,13 @@
 				4C095FDB1385F0BF00374892 /* RootViewController.h */,
 				4C095FDC1385F0BF00374892 /* RootViewController.m */,
 				4C095FDE1385F0BF00374892 /* RootViewController.xib */,
-				4C095FD51385F0BF00374892 /* ToDo.xcdatamodeld */,
+				4CDE28D6138F255A008A0630 /* TabViewController.h */,
+				4CDE28D7138F255A008A0630 /* TabViewController.m */,
+				4CDE28D8138F255A008A0630 /* TabViewController.xib */,
 				4C095FCA1385F0BF00374892 /* Supporting Files */,
+				4CDE28DB138F29CF008A0630 /* FirstViewController.h */,
+				4CDE28DC138F29CF008A0630 /* FirstViewController.m */,
+				4CDE28DD138F29CF008A0630 /* FirstViewController.xib */,
 			);
 			path = ToDo;
 			sourceTree = "<group>";
@@ -158,6 +206,12 @@
 				4C095FCE1385F0BF00374892 /* InfoPlist.strings in Resources */,
 				4C095FDA1385F0BF00374892 /* MainWindow.xib in Resources */,
 				4C095FE01385F0BF00374892 /* RootViewController.xib in Resources */,
+				4CDE28DA138F255A008A0630 /* TabViewController.xib in Resources */,
+				4CDE28DF138F29CF008A0630 /* FirstViewController.xib in Resources */,
+				4CDE28E4138F29E3008A0630 /* SecondViewController.xib in Resources */,
+				4CDE28E9138F29F5008A0630 /* ThirdViewController.xib in Resources */,
+				4CDE28EE138F2A13008A0630 /* FourthViewController.xib in Resources */,
+				4CDE28F3138F2A25008A0630 /* FifthViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,6 +226,12 @@
 				4C095FD41385F0BF00374892 /* ToDoAppDelegate.m in Sources */,
 				4C095FD71385F0BF00374892 /* ToDo.xcdatamodeld in Sources */,
 				4C095FDD1385F0BF00374892 /* RootViewController.m in Sources */,
+				4CDE28D9138F255A008A0630 /* TabViewController.m in Sources */,
+				4CDE28DE138F29CF008A0630 /* FirstViewController.m in Sources */,
+				4CDE28E3138F29E3008A0630 /* SecondViewController.m in Sources */,
+				4CDE28E8138F29F5008A0630 /* ThirdViewController.m in Sources */,
+				4CDE28ED138F2A13008A0630 /* FourthViewController.m in Sources */,
+				4CDE28F2138F2A25008A0630 /* FifthViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +269,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -218,6 +279,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -226,6 +289,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
@@ -233,6 +297,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 			};
 			name = Release;
@@ -284,6 +350,7 @@
 				4C095FE51385F0BF00374892 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
@@ -294,7 +361,8 @@
 				4C095FD61385F0BF00374892 /* ToDo.xcdatamodel */,
 			);
 			currentVersion = 4C095FD61385F0BF00374892 /* ToDo.xcdatamodel */;
-			path = ToDo.xcdatamodeld;
+			name = ToDo.xcdatamodeld;
+			path = ToDo/ToDo.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
