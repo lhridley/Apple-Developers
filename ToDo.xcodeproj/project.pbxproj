@@ -18,6 +18,8 @@
 		4C095FDA1385F0BF00374892 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C095FD81385F0BF00374892 /* MainWindow.xib */; };
 		4C095FDD1385F0BF00374892 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C095FDC1385F0BF00374892 /* RootViewController.m */; };
 		4C095FE01385F0BF00374892 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C095FDE1385F0BF00374892 /* RootViewController.xib */; };
+		4C67770E13985E7D00CEC8D3 /* ToDoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C67770C13985E7D00CEC8D3 /* ToDoDetailViewController.m */; };
+		4C67770F13985E7D00CEC8D3 /* ToDoDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C67770D13985E7D00CEC8D3 /* ToDoDetailViewController.xib */; };
 		4CD3AECA138F549D003E6E7B /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD3AEBE138F549D003E6E7B /* ThirdViewController.m */; };
 		4CD3AECB138F549D003E6E7B /* FifthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CD3AEBF138F549D003E6E7B /* FifthViewController.xib */; };
 		4CD3AECC138F549D003E6E7B /* FifthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD3AEC0138F549D003E6E7B /* FifthViewController.m */; };
@@ -49,6 +51,9 @@
 		4C095FDB1385F0BF00374892 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		4C095FDC1385F0BF00374892 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		4C095FDF1385F0BF00374892 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RootViewController.xib; sourceTree = "<group>"; };
+		4C67770B13985E7D00CEC8D3 /* ToDoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDoDetailViewController.h; sourceTree = "<group>"; };
+		4C67770C13985E7D00CEC8D3 /* ToDoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoDetailViewController.m; sourceTree = "<group>"; };
+		4C67770D13985E7D00CEC8D3 /* ToDoDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToDoDetailViewController.xib; sourceTree = "<group>"; };
 		4CD3AEBE138F549D003E6E7B /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
 		4CD3AEBF138F549D003E6E7B /* FifthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FifthViewController.xib; sourceTree = "<group>"; };
 		4CD3AEC0138F549D003E6E7B /* FifthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FifthViewController.m; sourceTree = "<group>"; };
@@ -137,6 +142,9 @@
 				4CDE28D7138F255A008A0630 /* TabViewController.m */,
 				4CDE28D8138F255A008A0630 /* TabViewController.xib */,
 				4C095FD51385F0BF00374892 /* ToDo.xcdatamodeld */,
+				4C67770B13985E7D00CEC8D3 /* ToDoDetailViewController.h */,
+				4C67770C13985E7D00CEC8D3 /* ToDoDetailViewController.m */,
+				4C67770D13985E7D00CEC8D3 /* ToDoDetailViewController.xib */,
 				4C095FCA1385F0BF00374892 /* Supporting Files */,
 				4CDE28DB138F29CF008A0630 /* FirstViewController.h */,
 				4CDE28DC138F29CF008A0630 /* FirstViewController.m */,
@@ -212,6 +220,7 @@
 				4CD3AECD138F549D003E6E7B /* FourthViewController.xib in Resources */,
 				4CD3AECF138F549D003E6E7B /* ThirdViewController.xib in Resources */,
 				4CD3AED0138F549D003E6E7B /* SecondViewController.xib in Resources */,
+				4C67770F13985E7D00CEC8D3 /* ToDoDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +241,7 @@
 				4CD3AECC138F549D003E6E7B /* FifthViewController.m in Sources */,
 				4CD3AECE138F549D003E6E7B /* FourthViewController.m in Sources */,
 				4CD3AED1138F549D003E6E7B /* SecondViewController.m in Sources */,
+				4C67770E13985E7D00CEC8D3 /* ToDoDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
