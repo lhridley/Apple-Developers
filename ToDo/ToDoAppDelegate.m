@@ -27,7 +27,8 @@
 {
     // Override point for customization after application launch.
     // Add the navigation controller's view to the window and display.
-    self.window.rootViewController = self.navigationController;
+    [self.window insertSubview:self.navigationController.view atIndex:0];
+    //self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -82,6 +83,7 @@
 {
     RootViewController *rootViewController = (RootViewController *)[self.navigationController topViewController];
     rootViewController.managedObjectContext = self.managedObjectContext;
+    //self.dateCreated = [NSDate date];
 }
 
 - (void)saveContext

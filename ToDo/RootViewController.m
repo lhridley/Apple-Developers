@@ -14,6 +14,8 @@
 
 @implementation RootViewController
 
+@synthesize tableView = _tableView;
+@synthesize tabBar = _tabBar;
 @synthesize fetchedResultsController=__fetchedResultsController;
 
 @synthesize managedObjectContext=__managedObjectContext;
@@ -21,8 +23,26 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSError *error = nil;
+    if(![[self fetchedResultsController] performFetch:&error]) {
+        UIAlertView *alert = [[UIAlertView alloc] 
+                              initWithTitle:@"Error loading data"
+                              message:[NSString stringWithFormat:@"Error was: %@, quitting.", [error localizedDescription]] 
+                              delegate:self 
+                              cancelButtonTitle:@"Aw, Nuts" 
+                              otherButtonTitles:nil];
+        [alert show];
+    }
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSInteger selectedTab = [defaults integerForKey:kSelectedTabDefaultsKey];
+    UITabBarItem *item = [self.tabBar.items objectAtIndex:selectedTab];
+    [self.tabBar setSelectedItem:item];
     // Set up the edit and add buttons.
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    
+    UIBarButtonItem *editButton = self.editButtonItem;
+    [editButton setTarget:self];
+    [editButton setAction:@selector(toggleEdit)];
+    self.navigationItem.leftBarButtonItem = editButton;
 
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject)];
     self.navigationItem.rightBarButtonItem = addButton;
@@ -35,7 +55,7 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated
-{
+{    
     [super viewDidAppear:animated];
 }
 
@@ -60,13 +80,22 @@
 // Customize the number of sections in the table view.
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [[self.fetchedResultsController sections] count];
+    NSUInteger count = [[self.fetchedResultsController sections] count];
+    if (count == 0) { 
+        count = 1;
+    }
+    return count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
-    return [sectionInfo numberOfObjects];
+    NSArray *sections = [self.fetchedResultsController sections];
+    NSUInteger count = 0;
+    if([sections count]) {
+        id <NSFetchedResultsSectionInfo> sectionInfo = [sections objectAtIndex:section];
+        count = [sectionInfo numberOfObjects];
+    }
+    return count;
 }
 
 // Customize the appearance of table view cells.
@@ -76,11 +105,36 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+    }
+    NSManagedObject *oneTask = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    NSInteger tab = [self.tabBar.items indexOfObject:self.tabBar.selectedItem];
+    switch(tab) {
+        case kByDateAdded:
+            cell.textLabel.text = [oneTask valueForKey:@"taskDescription"];
+            cell.detailTextLabel.text = [oneTask valueForKey:@"dateNeeded"];
+            break;
+        case kByDateDue:
+            cell.textLabel.text = [oneTask valueForKey:@"taskDescription"];
+            cell.detailTextLabel.text = [oneTask valueForKey:@"dateNeeded"];
+            break;
+        case kByCategory:
+            cell.textLabel.text = [oneTask valueForKey:@"taskDescription"];
+            cell.detailTextLabel.text = [oneTask valueForKey:@"dateNeeded"];
+            break;
+        case kByPriority:
+            cell.textLabel.text = [oneTask valueForKey:@"taskDescription"];
+            cell.detailTextLabel.text = [oneTask valueForKey:@"dateNeeded"];
+            break;
+        case kCompleted:
+            cell.textLabel.text = [oneTask valueForKey:@"taskDescription"];
+            cell.detailTextLabel.text = [oneTask valueForKey:@"dateCompleted"];
+        default:
+            break;
     }
 
     // Configure the cell.
-    [self configureCell:cell atIndexPath:indexPath];
+//    [self configureCell:cell atIndexPath:indexPath];
     return cell;
 }
 
@@ -111,7 +165,8 @@
              abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
              */
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-            abort();
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error saving after delete" message:[NSString stringWithFormat:@"Error was: %@, quitting.",[error description]] delegate:self cancelButtonTitle:@"Aw, Nuts" otherButtonTitles:nil];
+            [alert show];
         }
     }   
 }
@@ -124,6 +179,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    // TODO:  Instantiate detail editing view controller and push onto stack
     /*
     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
     // ...
@@ -143,6 +199,8 @@
 
 - (void)viewDidUnload
 {
+    [self setTableView:nil];
+    [self setTabBar:nil];
     [super viewDidUnload];
 
     // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
@@ -153,6 +211,8 @@
 {
     [__fetchedResultsController release];
     [__managedObjectContext release];
+    [_tableView release];
+    [_tabBar release];
     [super dealloc];
 }
 
@@ -171,7 +231,7 @@
     
     // If appropriate, configure the new managed object.
     // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
-    [newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
+    //[newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
     
     // Save the context.
     NSError *error = nil;
@@ -182,8 +242,8 @@
          
          abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
          */
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
+        NSLog(@"Error saving ToDo: %@, %@", error, [error userInfo]);
+        //TODO:  Instantiate detail editing controller and push onto stack
     }
 }
 
@@ -195,7 +255,7 @@
     {
         return __fetchedResultsController;
     }
-    
+    //TODO:  Code This Section -- see p 69
     /*
      Set up the fetched results controller.
     */
@@ -259,6 +319,12 @@
         case NSFetchedResultsChangeDelete:
             [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
             break;
+        case NSFetchedResultsChangeMove:
+            break;
+        case NSFetchedResultsChangeUpdate:
+            break;
+        default:
+            break;
     }
 }
 
@@ -304,5 +370,32 @@
     [self.tableView reloadData];
 }
  */
+#pragma mark -
+#pragma mark UIAlertView Delegate
+- (void) alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    exit(-1);
+}
 
+#pragma mark -
+#pragma mark Tab Bar Delegate
+- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSUInteger tabIndex = [tabBar.items indexOfObject:item];
+    [defaults setInteger:tabIndex forKey:kSelectedTabDefaultsKey];
+    self.fetchedResultsController.delegate = nil;
+    [self.fetchedResultsController release];
+    self.fetchedResultsController = nil;
+    NSError *error;
+    if (![self.fetchedResultsController performFetch:&error])
+        NSLog(@"Error performing fetch: %@", [error localizedDescription]);
+    [self.tableView reloadData];
+}
+#pragma mark -
+#pragma mark IBAction methods
+- (IBAction) toggleEdit {
+    BOOL editing = !self.tableView.editing;
+    self.navigationItem.rightBarButtonItem.enabled = !editing;
+    self.navigationItem.leftBarButtonItem.title = (editing) ? @"Done" : @"Edit";
+    [self.tableView setEditing:editing animated:YES];
+}
 @end

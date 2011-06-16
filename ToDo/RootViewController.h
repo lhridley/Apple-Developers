@@ -10,11 +10,27 @@
 
 #import <CoreData/CoreData.h>
 
-@interface RootViewController : UITableViewController <NSFetchedResultsControllerDelegate> {
+#define kSelectedTabDefaultsKey @"Selected Tab"
 
+enum {
+    kByDateAdded,
+    kByDateDue,
+    kByCategory,
+    kByPriority,
+    kCompleted
+};
+
+@interface RootViewController : UIViewController <UITableViewDelegate,UITabBarDelegate, UIAlertViewDelegate, NSFetchedResultsControllerDelegate> {
+    
+    UITableView *_tableView;
+    UITabBar *_tabBar;
 }
+@property (nonatomic, retain) IBOutlet UITableView *tableView;
+@property (nonatomic, retain) IBOutlet UITabBar *tabBar;
 
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+
+- (IBAction) toggleEdit;
 
 @end
