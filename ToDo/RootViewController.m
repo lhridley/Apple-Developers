@@ -109,26 +109,27 @@
     }
     NSManagedObject *oneTask = [self.fetchedResultsController objectAtIndexPath:indexPath];
     NSInteger tab = [self.tabBar.items indexOfObject:self.tabBar.selectedItem];
+    NSDate *dn = [oneTask valueForKey:@"dateNeeded"];
     switch(tab) {
         case kByDateAdded:
             cell.textLabel.text = [oneTask valueForKey:@"taskDescription"];
-            cell.detailTextLabel.text = [oneTask valueForKey:@"dateNeeded"];
+            cell.detailTextLabel.text = [dn description];
             break;
         case kByDateDue:
             cell.textLabel.text = [oneTask valueForKey:@"taskDescription"];
-            cell.detailTextLabel.text = [oneTask valueForKey:@"dateNeeded"];
+            cell.detailTextLabel.text = [dn description];
             break;
         case kByCategory:
             cell.textLabel.text = [oneTask valueForKey:@"taskDescription"];
-            cell.detailTextLabel.text = [oneTask valueForKey:@"dateNeeded"];
+            cell.detailTextLabel.text = [dn description];
             break;
         case kByPriority:
             cell.textLabel.text = [oneTask valueForKey:@"taskDescription"];
-            cell.detailTextLabel.text = [oneTask valueForKey:@"dateNeeded"];
+            cell.detailTextLabel.text = [dn description];
             break;
         case kCompleted:
             cell.textLabel.text = [oneTask valueForKey:@"taskDescription"];
-            cell.detailTextLabel.text = [oneTask valueForKey:@"dateCompleted"];
+            cell.detailTextLabel.text = [dn description];
         default:
             break;
     }
@@ -219,7 +220,8 @@
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
     NSManagedObject *managedObject = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [[managedObject valueForKey:@"timeStamp"] description];
+    cell.textLabel.text = [[managedObject valueForKey:@"taskDescription"] description];
+    cell.textLabel.text = [[managedObject valueForKey:@"dateNeeded"] description];
 }
 
 - (void)insertNewObject
@@ -231,7 +233,8 @@
     
     // If appropriate, configure the new managed object.
     // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
-    //[newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
+    [newManagedObject setValue:[NSDate date] forKey:@"dateCreated"];
+    [newManagedObject setValue:[NSDate date] forKey:@"dateNeeded"];
     
     // Save the context.
     NSError *error = nil;
