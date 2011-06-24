@@ -226,6 +226,12 @@
 
 - (void)insertNewObject
 {
+    //Let's change this method to launch a new view that lets us add a
+    //ToDo item to our list.
+    
+    //We will need to call a new view and view controller instead of inserting
+    //a new object into our table.
+    
     // Create a new instance of the entity managed by the fetched results controller.
     NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
     NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];

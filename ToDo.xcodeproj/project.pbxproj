@@ -20,6 +20,10 @@
 		4C095FE01385F0BF00374892 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C095FDE1385F0BF00374892 /* RootViewController.xib */; };
 		4C67770E13985E7D00CEC8D3 /* ToDoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C67770C13985E7D00CEC8D3 /* ToDoDetailViewController.m */; };
 		4C67770F13985E7D00CEC8D3 /* ToDoDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C67770D13985E7D00CEC8D3 /* ToDoDetailViewController.xib */; };
+		4C849C7F13B43DDF00564A5D /* DueDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C849C7D13B43DDF00564A5D /* DueDateViewController.m */; };
+		4C849C8013B43DDF00564A5D /* DueDateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C849C7E13B43DDF00564A5D /* DueDateViewController.xib */; };
+		4C849C8613B43EB700564A5D /* CategoryPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C849C8413B43EB700564A5D /* CategoryPickerViewController.m */; };
+		4C849C8713B43EB700564A5D /* CategoryPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C849C8513B43EB700564A5D /* CategoryPickerViewController.xib */; };
 		4CA784841399066000E99631 /* TabView1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CA7847F1399066000E99631 /* TabView1.png */; };
 		4CA784851399066000E99631 /* TabView2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CA784801399066000E99631 /* TabView2.png */; };
 		4CA784861399066000E99631 /* TabView3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CA784811399066000E99631 /* TabView3.png */; };
@@ -59,6 +63,12 @@
 		4C67770B13985E7D00CEC8D3 /* ToDoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDoDetailViewController.h; sourceTree = "<group>"; };
 		4C67770C13985E7D00CEC8D3 /* ToDoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoDetailViewController.m; sourceTree = "<group>"; };
 		4C67770D13985E7D00CEC8D3 /* ToDoDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToDoDetailViewController.xib; sourceTree = "<group>"; };
+		4C849C7C13B43DDF00564A5D /* DueDateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DueDateViewController.h; sourceTree = "<group>"; };
+		4C849C7D13B43DDF00564A5D /* DueDateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DueDateViewController.m; sourceTree = "<group>"; };
+		4C849C7E13B43DDF00564A5D /* DueDateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DueDateViewController.xib; sourceTree = "<group>"; };
+		4C849C8313B43EB700564A5D /* CategoryPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CategoryPickerViewController.h; path = "../../../../AppleDev/Apple-Developers/ToDo/ToDo/CategoryPickerViewController.h"; sourceTree = "<group>"; };
+		4C849C8413B43EB700564A5D /* CategoryPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CategoryPickerViewController.m; path = "../../../../AppleDev/Apple-Developers/ToDo/ToDo/CategoryPickerViewController.m"; sourceTree = "<group>"; };
+		4C849C8513B43EB700564A5D /* CategoryPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CategoryPickerViewController.xib; path = "../../../../AppleDev/Apple-Developers/ToDo/ToDo/CategoryPickerViewController.xib"; sourceTree = "<group>"; };
 		4CA7847F1399066000E99631 /* TabView1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TabView1.png; sourceTree = "<group>"; };
 		4CA784801399066000E99631 /* TabView2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TabView2.png; sourceTree = "<group>"; };
 		4CA784811399066000E99631 /* TabView3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TabView3.png; sourceTree = "<group>"; };
@@ -130,34 +140,25 @@
 		4C095FC91385F0BF00374892 /* ToDo */ = {
 			isa = PBXGroup;
 			children = (
-				4CDE28DB138F29CF008A0630 /* FirstViewController.h */,
-				4CDE28DC138F29CF008A0630 /* FirstViewController.m */,
-				4CDE28DD138F29CF008A0630 /* FirstViewController.xib */,
-				4CD3AEBE138F549D003E6E7B /* ThirdViewController.m */,
-				4CD3AEBF138F549D003E6E7B /* FifthViewController.xib */,
-				4CD3AEC0138F549D003E6E7B /* FifthViewController.m */,
-				4CD3AEC1138F549D003E6E7B /* FifthViewController.h */,
-				4CD3AEC2138F549D003E6E7B /* FourthViewController.xib */,
-				4CD3AEC3138F549D003E6E7B /* FourthViewController.m */,
-				4CD3AEC4138F549D003E6E7B /* FourthViewController.h */,
-				4CD3AEC5138F549D003E6E7B /* ThirdViewController.xib */,
-				4CD3AEC6138F549D003E6E7B /* ThirdViewController.h */,
-				4CD3AEC7138F549D003E6E7B /* SecondViewController.xib */,
-				4CD3AEC8138F549D003E6E7B /* SecondViewController.m */,
-				4CD3AEC9138F549D003E6E7B /* SecondViewController.h */,
+				4C849C8213B43DEF00564A5D /* TabGroup ViewControllers */,
 				4C095FD21385F0BF00374892 /* ToDoAppDelegate.h */,
 				4C095FD31385F0BF00374892 /* ToDoAppDelegate.m */,
 				4C095FD81385F0BF00374892 /* MainWindow.xib */,
-				4C095FDB1385F0BF00374892 /* RootViewController.h */,
-				4C095FDC1385F0BF00374892 /* RootViewController.m */,
-				4C095FDE1385F0BF00374892 /* RootViewController.xib */,
 				4CDE28D6138F255A008A0630 /* TabViewController.h */,
 				4CDE28D7138F255A008A0630 /* TabViewController.m */,
 				4CDE28D8138F255A008A0630 /* TabViewController.xib */,
-				4C095FD51385F0BF00374892 /* ToDo.xcdatamodeld */,
+				4C095FDB1385F0BF00374892 /* RootViewController.h */,
+				4C095FDC1385F0BF00374892 /* RootViewController.m */,
+				4C095FDE1385F0BF00374892 /* RootViewController.xib */,
 				4C67770B13985E7D00CEC8D3 /* ToDoDetailViewController.h */,
 				4C67770C13985E7D00CEC8D3 /* ToDoDetailViewController.m */,
 				4C67770D13985E7D00CEC8D3 /* ToDoDetailViewController.xib */,
+				4C849C7C13B43DDF00564A5D /* DueDateViewController.h */,
+				4C849C7D13B43DDF00564A5D /* DueDateViewController.m */,
+				4C849C7E13B43DDF00564A5D /* DueDateViewController.xib */,
+				4C849C8313B43EB700564A5D /* CategoryPickerViewController.h */,
+				4C849C8413B43EB700564A5D /* CategoryPickerViewController.m */,
+				4C849C8513B43EB700564A5D /* CategoryPickerViewController.xib */,
 				4C095FCA1385F0BF00374892 /* Supporting Files */,
 			);
 			path = ToDo;
@@ -166,6 +167,7 @@
 		4C095FCA1385F0BF00374892 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4C095FD51385F0BF00374892 /* ToDo.xcdatamodeld */,
 				4CA7847F1399066000E99631 /* TabView1.png */,
 				4CA784801399066000E99631 /* TabView2.png */,
 				4CA784811399066000E99631 /* TabView3.png */,
@@ -177,6 +179,28 @@
 				4C095FD01385F0BF00374892 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4C849C8213B43DEF00564A5D /* TabGroup ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4CDE28DB138F29CF008A0630 /* FirstViewController.h */,
+				4CDE28DC138F29CF008A0630 /* FirstViewController.m */,
+				4CDE28DD138F29CF008A0630 /* FirstViewController.xib */,
+				4CD3AEC7138F549D003E6E7B /* SecondViewController.xib */,
+				4CD3AEC8138F549D003E6E7B /* SecondViewController.m */,
+				4CD3AEC9138F549D003E6E7B /* SecondViewController.h */,
+				4CD3AEBE138F549D003E6E7B /* ThirdViewController.m */,
+				4CD3AEC6138F549D003E6E7B /* ThirdViewController.h */,
+				4CD3AEC5138F549D003E6E7B /* ThirdViewController.xib */,
+				4CD3AEC4138F549D003E6E7B /* FourthViewController.h */,
+				4CD3AEC3138F549D003E6E7B /* FourthViewController.m */,
+				4CD3AEC2138F549D003E6E7B /* FourthViewController.xib */,
+				4CD3AEC1138F549D003E6E7B /* FifthViewController.h */,
+				4CD3AEC0138F549D003E6E7B /* FifthViewController.m */,
+				4CD3AEBF138F549D003E6E7B /* FifthViewController.xib */,
+			);
+			name = "TabGroup ViewControllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +265,8 @@
 				4CA784861399066000E99631 /* TabView3.png in Resources */,
 				4CA784871399066000E99631 /* TabView4.png in Resources */,
 				4CA784881399066000E99631 /* TabView5.png in Resources */,
+				4C849C8013B43DDF00564A5D /* DueDateViewController.xib in Resources */,
+				4C849C8713B43EB700564A5D /* CategoryPickerViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +288,8 @@
 				4CD3AECE138F549D003E6E7B /* FourthViewController.m in Sources */,
 				4CD3AED1138F549D003E6E7B /* SecondViewController.m in Sources */,
 				4C67770E13985E7D00CEC8D3 /* ToDoDetailViewController.m in Sources */,
+				4C849C7F13B43DDF00564A5D /* DueDateViewController.m in Sources */,
+				4C849C8613B43EB700564A5D /* CategoryPickerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
