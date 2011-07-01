@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 
 
-@interface ToDoDetailViewController : UIViewController {
+@interface ToDoDetailViewController : UIViewController  {
+    NSManagedObject *todo;
     
     UITextField *toDoDescription;
     UILabel *dateNeeded;
@@ -22,6 +23,8 @@
 @property (nonatomic, retain) IBOutlet UILabel *notificationTime;
 @property (nonatomic, retain) IBOutlet UILabel *category;
 @property (nonatomic, retain) IBOutlet UISegmentedControl *priority;
+@property(nonatomic, retain) NSManagedObject *todo;
+
 - (IBAction)showDueDateView:(id)sender;
 - (IBAction)showNotficationView:(id)sender;
 - (IBAction)showCategoryView:(id)sender;

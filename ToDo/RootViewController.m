@@ -8,6 +8,8 @@
 
 #import "RootViewController.h"
 
+
+
 @interface RootViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 @end
@@ -17,8 +19,8 @@
 @synthesize tableView = _tableView;
 @synthesize tabBar = _tabBar;
 @synthesize fetchedResultsController=__fetchedResultsController;
-
 @synthesize managedObjectContext=__managedObjectContext;
+@synthesize detailController;
 
 - (void)viewDidLoad
 {
@@ -133,6 +135,7 @@
         default:
             break;
     }
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 
     // Configure the cell.
 //    [self configureCell:cell atIndexPath:indexPath];
@@ -236,7 +239,7 @@
     NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
     NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
     NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
-    
+
     // If appropriate, configure the new managed object.
     // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
     [newManagedObject setValue:[NSDate date] forKey:@"dateCreated"];
@@ -254,6 +257,9 @@
         NSLog(@"Error saving ToDo: %@, %@", error, [error userInfo]);
         //TODO:  Instantiate detail editing controller and push onto stack
     }
+//    self.detailController.todo = newManagedObject;
+    [self.navigationController pushViewController:self.detailController animated:YES];
+
 }
 
 #pragma mark - Fetched results controller
@@ -390,7 +396,9 @@
 - (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSUInteger tabIndex = [tabBar.items indexOfObject:item];
-    [defaults setInteger:tabIndex forKey:kSelectedTabDefaultsKey];
+    //TODO:  uncomment this when we get the tab views programmed
+//    [defaults setInteger:tabIndex forKey:kSelectedTabDefaultsKey];
+    [defaults setInteger:0 forKey:kSelectedTabDefaultsKey];
     self.fetchedResultsController.delegate = nil;
     [self.fetchedResultsController release];
     self.fetchedResultsController = nil;

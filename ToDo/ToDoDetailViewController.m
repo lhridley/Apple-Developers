@@ -15,6 +15,7 @@
 @synthesize notificationTime;
 @synthesize category;
 @synthesize priority;
+@synthesize todo;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

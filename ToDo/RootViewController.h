@@ -20,16 +20,22 @@ enum {
     kCompleted
 };
 
+@class ToDoDetailViewController;
+
 @interface RootViewController : UIViewController <UITableViewDelegate,UITabBarDelegate, UIAlertViewDelegate, NSFetchedResultsControllerDelegate> {
     
     UITableView *_tableView;
     UITabBar *_tabBar;
+    ToDoDetailViewController *detailController;
 }
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
 @property (nonatomic, retain) IBOutlet UITabBar *tabBar;
 
+@property (nonatomic, retain) IBOutlet ToDoDetailViewController *detailController;
+
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+
 
 - (IBAction) toggleEdit;
 

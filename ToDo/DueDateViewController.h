@@ -12,12 +12,12 @@
 @interface DueDateViewController : UIViewController {
     
     UIDatePicker *dueDatePicker;
+    NSDate *datePicked;
 }
 
 @property (nonatomic, retain) IBOutlet UIDatePicker *dueDatePicker;
+@property (nonatomic, retain) NSDate *datePicked;
 
 - (IBAction)saveOrCancelDueDate:(id)sender;
-
-
 
 @end

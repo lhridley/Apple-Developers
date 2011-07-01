@@ -8,9 +8,8 @@
 
 #import "DueDateViewController.h"
 
-
 @implementation DueDateViewController
-@synthesize dueDatePicker;
+@synthesize dueDatePicker, datePicked;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -23,6 +22,7 @@
 
 - (void)dealloc
 {
+    [datePicked release];
     [dueDatePicker release];
     [super dealloc];
 }
@@ -39,12 +39,16 @@
 
 - (void)viewDidLoad
 {
+    NSDate *now = [[NSDate alloc]init];
+    [dueDatePicker setDate:now animated:NO];
+    [now release];
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 }
 
 - (void)viewDidUnload
 {
+    [self setDatePicked:nil];
     [self setDueDatePicker:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
@@ -58,6 +62,13 @@
 }
 
 - (IBAction)saveOrCancelDueDate:(id)sender {
-
+    NSInteger tagValue = [sender tag];
+    if(tagValue == 999) {
+        //We're going to save our value and return it to the 
+        //ToDoDetailViewController
+        self.datePicked = [dueDatePicker date];
+    }
+    //Here we need to return control to the previous view controller -- get back to the previous view on the stack without losing our captured values before we release the view
+    
 }
 @end
