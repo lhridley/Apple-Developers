@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface TabViewController : UIViewController {
+@interface TabViewController : UITabBarController {
     
 }
 

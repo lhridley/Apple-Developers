@@ -80,6 +80,13 @@
 }
 
 - (IBAction)saveOrCancel:(id)sender {
+    NSString *label = [sender titleLabel].text;
+    if([label isEqualToString:@"Save"]) {
+            //Conduct Save action here
+    } else {
+        
+    }
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)priorityDataChange:(id)sender {
