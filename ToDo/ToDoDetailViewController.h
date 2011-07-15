@@ -30,5 +30,6 @@
 - (IBAction)showCategoryView:(id)sender;
 - (IBAction)saveOrCancel:(id)sender;
 - (IBAction)priorityDataChange:(id)sender;
+- (IBAction)stopEditingToDoDescription:(id)sender;
 
 @end

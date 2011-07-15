@@ -40,6 +40,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSArray *categories = [NSArray arrayWithObjects:@"Home", @"Work", @"Personal", nil];
+    
     // Do any additional setup after loading the view from its nib.
 }
 

@@ -7,6 +7,7 @@
 //
 
 #import "DueDateViewController.h"
+#import "ToDoDetailViewController.h"
 
 @implementation DueDateViewController
 @synthesize dueDatePicker, datePicked;
@@ -67,7 +68,17 @@
         //We're going to save our value and return it to the 
         //ToDoDetailViewController
         self.datePicked = [dueDatePicker date];
+        //TODO:  This is the quick and dirty way -- need to replace this with the proper call to the Navigation Controller
+        ToDoDetailViewController *ttdvc = (ToDoDetailViewController *)[self.navigationController.viewControllers objectAtIndex:1];
+        NSDateFormatter *dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
+        
+        [dateFormatter setDateStyle:NSDateFormatterShortStyle];
+        [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
+    
+        ttdvc.dateNeeded.text = [dateFormatter stringFromDate:[dueDatePicker date]];
     }
+    [self.navigationController popViewControllerAnimated:YES];
+    
     //Here we need to return control to the previous view controller -- get back to the previous view on the stack without losing our captured values before we release the view
     
 }

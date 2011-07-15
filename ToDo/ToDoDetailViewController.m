@@ -7,6 +7,8 @@
 //
 
 #import "ToDoDetailViewController.h"
+#import "DueDateViewController.h"
+#import "CategoryPickerViewController.h"
 
 
 @implementation ToDoDetailViewController
@@ -71,12 +73,18 @@
 }
 
 - (IBAction)showDueDateView:(id)sender {
+    DueDateViewController *ddvc = [[DueDateViewController alloc] init];
+    [self.navigationController pushViewController:ddvc animated:YES];
+    [ddvc release];
 }
 
 - (IBAction)showNotficationView:(id)sender {
 }
 
 - (IBAction)showCategoryView:(id)sender {
+    CategoryPickerViewController *cpvc = [[CategoryPickerViewController alloc] init];
+    [self.navigationController pushViewController:cpvc animated:YES];
+    [cpvc release]; 
 }
 
 - (IBAction)saveOrCancel:(id)sender {
@@ -90,5 +98,9 @@
 }
 
 - (IBAction)priorityDataChange:(id)sender {
+}
+
+- (IBAction)stopEditingToDoDescription:(id)sender {
+    [sender resignFirstResponder];
 }
 @end
